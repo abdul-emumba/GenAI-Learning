@@ -1,6 +1,6 @@
 # Tokenization Comparison: GPT vs BERT
 
-We compare tokenization between GPT (using tiktoken) and BERT (using transformers) tokenizers to understand how different models handle various text types.
+We compare tokenization between GPT (using transformers) and BERT (using transformers) tokenizers to understand how different models handle various text types.
 
 ## Token Count Comparison Table
 
