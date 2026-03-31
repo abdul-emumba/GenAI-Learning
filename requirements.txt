@@ -1,2 +1,15 @@
+openai==2.30.0
 groq==1.1.2
 transformers==5.3.0
+PyPDF2==3.0.1
+sentence-transformers==5.3.0
+pandas==3.0.2
+RapidFuzz==3.14.3
+
+langchain
+langchain-community
+langchain-chroma
+chromadb
+pypdf
+scikit-learn
+numpy

@@ -1,0 +1,202 @@
+[
+  {
+    "question": "What does the 'M' represent in Django\u2019s MTV pattern?",
+    "ground_truth": "Model, which represents the data-access layer.",
+    "answer": "In Django's MTV pattern, the 'M' represents the \"Model\", which is the data-access layer. This layer contains anything and everything about the data: how to access it, how to validate it, which behaviors it has, and the relationships between the data.",
+    "correct": false,
+    "similarity": 0.5162581205368042,
+    "status": "PASS"
+  },
+  {
+    "question": "What is the role of templates in Django?",
+    "ground_truth": "Templates handle the presentation layer and define how data is displayed.",
+    "answer": "In Django, templates play a crucial role in separating the presentation of a document from its data. They define placeholders and basic logic, known as tags, that regulate how the document should be displayed. Templates are used to output HTML, but they can also generate any text-based format. The primary purpose of templates is to separate the design of a page from the Python code, allowing designers to work on templates and programmers to work on Python code simultaneously, without interfering with each other's work.",
+    "correct": false,
+    "similarity": 0.5854605436325073,
+    "status": "PASS"
+  },
+  {
+    "question": "What does the 'V' represent in Django\u2019s MTV pattern?",
+    "ground_truth": "View, which contains business logic and connects models to templates.",
+    "answer": "In Django's MTV pattern, the 'V' represents the view, which is the business-logic layer. This layer contains the logic that accesses the model and defers to the appropriate template(s), acting as a bridge between models and templates.",
+    "correct": false,
+    "similarity": 0.5709015727043152,
+    "status": "PASS"
+  },
+  {
+    "question": "What is a Django model?",
+    "ground_truth": "A model is a Python class representing database structure and data.",
+    "answer": "A Django model refers to the data-access layer in the Django framework, which contains anything and everything about the data: how to access it, how to validate it, which behaviors it has, and the relationships between the data. It is the \"M\" in the MTV (Model-Template-View) development pattern used by Django.",
+    "correct": true,
+    "similarity": 0.7023341059684753,
+    "status": "PASS"
+  },
+  {
+    "question": "What command is used to create a new Django app?",
+    "ground_truth": "python manage.py startapp <app_name>",
+    "answer": "The command to create a new Django project is 'django-admin.py startproject mysite'. However, the context does not provide the command to create a new Django app. The command to create a new Django app is actually 'python manage.py startapp myapp', but this is not mentioned in the given context.",
+    "correct": false,
+    "similarity": 0.6274630427360535,
+    "status": "PASS"
+  },
+  {
+    "question": "Where are database configurations stored in Django?",
+    "ground_truth": "In the settings.py file.",
+    "answer": "In Django, database configurations are stored in the `settings.py` file. This file contains settings for the Django project, including database configuration, Django-specific options, and application-specific settings. The database configuration settings include `DATABASE_ENGINE`, `DATABASE_NAME`, `DATABASE_USER`, `DATABASE_PASSWORD`, `DATABASE_HOST`, and `DATABASE_PORT`.",
+    "correct": false,
+    "similarity": 0.48556527495384216,
+    "status": "PASS"
+  },
+  {
+    "question": "What does DATABASE_ENGINE specify in Django settings?",
+    "ground_truth": "It specifies which database backend to use.",
+    "answer": "DATABASE_ENGINE in Django settings specifies the database backend to be used, such as 'postgresql', 'mysql', 'sqlite3', or 'ado_mssql' for Microsoft SQL Server, and 'oracle' for Oracle. It tells Django which database engine to use for the project.",
+    "correct": false,
+    "similarity": 0.6441525220870972,
+    "status": "PASS"
+  },
+  {
+    "question": "What is SQLite in Django context?",
+    "ground_truth": "A file-based database that does not require a separate database server.",
+    "answer": "In the context of Django, SQLite is a type of database that can be used as the backend for a Django project. It is a self-contained, file-based database that does not require a separate database server process. Django supports SQLite as one of its database engines, and it can be specified as the DATABASE_ENGINE in the project's settings file. SQLite is a good choice for development and testing purposes, and it is also suitable for small to medium-sized projects. In Django, SQLite does not require a separate adapter to be installed if Python 2.5 or later is being used.",
+    "correct": false,
+    "similarity": 0.427950382232666,
+    "status": "PASS"
+  },
+  {
+    "question": "What is a Django app?",
+    "ground_truth": "A reusable package containing models, views, and related logic.",
+    "answer": "Based on the provided context, a Django app is not explicitly defined. However, it can be inferred that a Django app refers to a Web application built using the Django framework. \n\nIn the context, it is mentioned that \"In a dynamic Web site, rather, each page is generated by a computer program \u2014 a so-called \u201cWeb application\u201d \u2014 that you, the Web developer, create.\" \n\nAdditionally, the context provides examples of websites that use Django, such as http://www.ljworld.com/, http://www.lawrence.com/, and http://chicagocrime.org/, which can be considered as Django apps. \n\nHowever, a clear and concise definition of a Django app is not provided in the given context.",
+    "correct": false,
+    "similarity": 0.16673530638217926,
+    "status": "PASS"
+  },
+  {
+    "question": "What does a Django project contain?",
+    "ground_truth": "A collection of apps along with configuration settings.",
+    "answer": "A Django project is a collection of settings for an instance of Django, including database configuration, Django-specific options, and application-specific settings. It contains the following files:\n\n1. `__init__.py`\n2. `manage.py` - a command-line utility that lets you interact with the Django project\n3. `settings.py` - settings/configuration for the Django project\n4. `urls.py` - the URL declarations for the Django project, a \"table of contents\" of the Django-powered site.",
+    "correct": false,
+    "similarity": 0.4112750291824341,
+    "status": "PASS"
+  },
+  {
+    "question": "What is the purpose of Python functions?",
+    "ground_truth": "To encapsulate reusable blocks of code.",
+    "answer": "The purpose of Python functions is to operate on information (inputs) fed into them and return outputs. They allow you to pass data, known as parameters, into a function, and the function can return data as a result. This enables you to reuse code, automate repetitive tasks, and organize your code in a more structured and efficient way.",
+    "correct": false,
+    "similarity": 0.34097641706466675,
+    "status": "PASS"
+  },
+  {
+    "question": "What is the __init__ function in Python classes?",
+    "ground_truth": "It is a constructor method used to initialize objects.",
+    "answer": "The `__init__` function in Python classes is a built-in function that is always executed when the class is being initiated. It is similar to a constructor in other object-oriented programming languages. The `__init__` function is used to initialize the attributes of the class, and it is called when an object of the class is created.",
+    "correct": false,
+    "similarity": 0.5637653470039368,
+    "status": "PASS"
+  },
+  {
+    "question": "What is a Python module?",
+    "ground_truth": "A file containing Python code that can be imported and reused.",
+    "answer": "A Python module is a Python code library that you can include in your project. A package contains all the files you need for a module.",
+    "correct": false,
+    "similarity": 0.6132863163948059,
+    "status": "PASS"
+  },
+  {
+    "question": "What is exception handling in Python?",
+    "ground_truth": "A mechanism to handle runtime errors using try-except blocks.",
+    "answer": "Exception handling in Python refers to the process of handling and managing errors or exceptions that occur during the execution of a program. It allows programmers to write code that can handle selected exceptions, preventing the program from crashing or terminating abruptly. \n\nIn Python, exception handling is achieved using the following built-in features:\n1. The try block: This block lets you test a block of code for errors.\n2. The except block: This block lets you handle the error.\n3. The finally block: This block lets you execute code, regardless of the result of the try and except blocks.\n\nWhen an error occurs, Python will normally stop and generate an error message. However, with exception handling, you can use try-except statements to catch and handle these exceptions, providing a more robust and error-free program.",
+    "correct": false,
+    "similarity": 0.4906246066093445,
+    "status": "PASS"
+  },
+  {
+    "question": "What is PIP used for in Python?",
+    "ground_truth": "It is used to install and manage Python packages.",
+    "answer": "PIP is used as a package manager for Python packages, or modules. It is a tool for installing Python packages. You can use PIP to install or uninstall Python packages using commands such as \"pip install packagename\" or \"pip uninstall packagename\".",
+    "correct": false,
+    "similarity": 0.6152703762054443,
+    "status": "PASS"
+  },
+  {
+    "question": "Why does Django prefer defining models in Python instead of relying on database introspection?",
+    "ground_truth": "Because introspection introduces overhead and may be inaccurate, while Python models improve performance and maintainability.",
+    "answer": "Django prefers defining models in Python instead of relying on database introspection for several reasons:\n\n1. **Reduced Overhead**: Introspecting a database at runtime can incur significant overhead, which Django's developers aim to minimize to make the framework faster.\n2. **Metadata Limitations**: Some databases, like older versions of MySQL, do not store sufficient metadata for accurate and complete introspection.\n3. **Productivity and Code Organization**: Writing Python code is more productive and easier to manage than switching between SQL and Python. Keeping everything in Python limits context switching and makes it easier to keep track of changes.\n4. **Version Control**: Storing data models as code makes it easier to keep track of changes to the data layout using version control systems.\n5. **Higher-Level Data Types**: Django models provide higher-level data types, such as email addresses and URLs, which are not available in SQL. This leads to higher productivity and more reusable code.\n6. **Database Consistency**: SQL is inconsistent across different database platforms. By defining models in Python, Django can provide a consistent interface across different databases.\n\nOverall, defining models in Python provides a more efficient, productive, and maintainable way to interact with databases, which aligns with Django's goal of encouraging rapid development and clean design.",
+    "correct": false,
+    "similarity": 0.5961834192276001,
+    "status": "PASS"
+  },
+  {
+    "question": "Why is Django considered an MTV framework instead of strict MVC?",
+    "ground_truth": "Because Django handles the controller internally and emphasizes models, templates, and views.",
+    "answer": "Django is considered an MTV (Model-Template-View) framework instead of a strict MVC (Model-View-Controller) framework because of the way it interprets the roles of each component. \n\nIn Django, the \"M\" (Model) refers to the data-access layer, which contains everything about the data, including how to access it, validate it, and the relationships between the data. \n\nThe \"T\" (Template) refers to the presentation layer, which contains presentation-related decisions, such as how something should be displayed on a web page. \n\nThe \"V\" (View) in Django refers to the business-logic layer, which contains the logic that accesses the model and defers to the appropriate template(s). It acts as a bridge between models and templates.\n\nThis interpretation differs from the traditional MVC pattern, where the \"View\" refers to the part of the system that selects what to display and how to display it, and the \"Controller\" refers to the part of the system that decides which view to use, depending on user input, accessing the model as needed.\n\nIn Django, the \"Controller\" part is handled by the framework itself, following the URLconf and calling the appropriate Python function for the given URL. This is why Django is often referred to as an MTV framework, as it doesn't have a separate \"Controller\" component like traditional MVC frameworks.",
+    "correct": true,
+    "similarity": 0.7164341807365417,
+    "status": "PASS"
+  },
+  {
+    "question": "Why is writing raw SQL in Django views considered a poor approach?",
+    "ground_truth": "Because it introduces boilerplate code, reduces portability, and tightly couples the code to a specific database.",
+    "answer": "Writing raw SQL in Django views is considered a poor approach for several reasons:\n\n1. **Hard-coding database connection parameters**: When you write raw SQL, you have to hard-code the database connection parameters, such as the database username, password, and host. This is not ideal, as these parameters should be stored in the Django configuration.\n\n2. **Boilerplate code**: Writing raw SQL requires a lot of boilerplate code, including creating a connection, creating a cursor, executing a statement, and closing the connection. This can be tedious and error-prone.\n\n3. **Database abstraction**: Raw SQL ties you to a specific database management system (e.g., MySQL). If you need to switch to a different database system (e.g., PostgreSQL), you'll have to rewrite the SQL code, which can be time-consuming and prone to errors.\n\n4. **SQL injection vulnerability**: Writing raw SQL can make your application vulnerable to SQL injection attacks, where an attacker can inject malicious SQL code to extract or modify sensitive data.\n\n5. **Lack of portability**: Raw SQL is not portable across different database systems. Different database systems have different SQL dialects, which can make it difficult to switch from one database system to another.\n\nDjango's database layer aims to solve these problems by providing a high-level, abstract interface to the database, which allows you to interact with the database using Python code, rather than writing raw SQL. This approach provides a number of benefits, including database abstraction, reduced boilerplate code, and improved security.",
+    "correct": false,
+    "similarity": 0.33109787106513977,
+    "status": "PASS"
+  },
+  {
+    "question": "Why should models be kept in apps in Django?",
+    "ground_truth": "Because Django requires models to reside within apps for proper organization and functionality.",
+    "answer": "In Django, models should be kept in apps for several reasons. \n\nFirstly, Django follows the \"model-view-controller\" (MVC) architecture, which emphasizes the separation of code and presentation. By keeping models in apps, this separation is maintained, allowing programmers to deal with code and designers to deal with HTML.\n\nSecondly, keeping models in apps encourages loose coupling, which means different pieces of the application are interchangeable and communicate with each other via clear, concise APIs. This makes it easier to mix and match layers if needed.\n\nThirdly, having data models stored as code rather than in the database makes it easier to keep models under version control. This way, changes to data layouts can be easily tracked.\n\nLastly, keeping models in apps allows for a single, abstracted data-access layer that's responsible for all data access. This means that if database table names change, the change can be made in a single place - the data-model definition - instead of in each SQL statement throughout the code.\n\nOverall, keeping models in apps in Django promotes rapid development, clean design, and maintainability, which are core principles of the Django framework.",
+    "correct": true,
+    "similarity": 0.7237970232963562,
+    "status": "PASS"
+  },
+  {
+    "question": "Why are Python virtual environments useful?",
+    "ground_truth": "They isolate dependencies and allow different projects to use different package versions.",
+    "answer": "Based on the provided context, Python virtual environments are useful because they allow you to have multiple Python environments on your computer, each with its own set of installed packages and interpreter. This means that you can isolate different projects and their dependencies, ensuring that they do not conflict with each other. \n\nAs mentioned in Chapter 13, a Python environment consists of an interpreter, a library, and a set of installed packages, which together determine the valid language constructs, syntax, and accessible operating-system functionality. By having multiple environments, you can easily switch between different projects that require different versions of Python or different packages, without having to worry about compatibility issues.\n\nFor example, you might have one environment for a project that requires Python 3.7 and another environment for a project that requires a different version of Python. This flexibility makes it easier to manage complex projects and ensures that your code runs consistently across different environments. \n\nAdditionally, using virtual environments can simplify the process of installing and managing packages, as you can install packages specific to each environment without affecting the global Python installation. This makes it easier to keep track of dependencies and ensures that your projects are self-contained and portable. \n\nOverall, Python virtual environments provide a convenient and efficient way to manage different projects and their dependencies, making it easier to develop, test, and deploy Python applications.",
+    "correct": false,
+    "similarity": 0.4212815761566162,
+    "status": "PASS"
+  },
+  {
+    "question": "Does Django natively support GraphQL without third-party libraries?",
+    "ground_truth": "Not mentioned in the document.",
+    "answer": "Not mentioned in the document.",
+    "correct": true,
+    "similarity": 1.0,
+    "status": "PASS"
+  },
+  {
+    "question": "Does the document describe deploying Django using Kubernetes?",
+    "ground_truth": "Not mentioned in the document.",
+    "answer": "Not mentioned in the document.",
+    "correct": true,
+    "similarity": 1.0,
+    "status": "PASS"
+  },
+  {
+    "question": "Does the Python document explain async/await concurrency in detail?",
+    "ground_truth": "Not mentioned in the document.",
+    "answer": "Not mentioned in the document.",
+    "correct": true,
+    "similarity": 1.0,
+    "status": "PASS"
+  },
+  {
+    "question": "Does the Django book cover microservices architecture patterns?",
+    "ground_truth": "Not mentioned in the document.",
+    "answer": "Not mentioned in the document.",
+    "correct": true,
+    "similarity": 1.0,
+    "status": "PASS"
+  },
+  {
+    "question": "Does the Python programming document include machine learning model training examples?",
+    "ground_truth": "Not mentioned in the document.",
+    "answer": "Not mentioned in the document.",
+    "correct": true,
+    "similarity": 1.0,
+    "status": "PASS"
+  }
+]

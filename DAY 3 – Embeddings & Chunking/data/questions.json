@@ -1,0 +1,177 @@
+[
+  {
+    "id": "Q1",
+    "question": "What problem does NeedleBench aim to address in evaluating long-context LLMs?",
+    "ground_truth": "NeedleBench is designed to evaluate the ability of large language models to reason over long contexts without missing important information or prematurely terminating their reasoning.",
+    "type": "factual",
+    "difficulty": "easy"
+  },
+  {
+    "id": "Q2",
+    "question": "What are the two main task categories defined in NeedleBench?",
+    "ground_truth": "The two main task categories in NeedleBench are information-sparse tasks, where only a few pieces of relevant information are needed, and information-dense tasks, where reasoning requires integrating many related pieces of information.",
+    "type": "factual",
+    "difficulty": "easy"
+  },
+  {
+    "id": "Q3",
+    "question": "What phenomenon describes premature reasoning termination by models?",
+    "ground_truth": "Under-thinking describes the phenomenon where a model stops reasoning prematurely and fails to integrate all relevant information to arrive at the correct answer.",
+    "type": "factual",
+    "difficulty": "easy"
+  },
+  {
+    "id": "Q4",
+    "question": "What is the name of the information-dense task proposed in the paper?",
+    "ground_truth": "The information-dense task proposed in the paper is called the Ancestral Trace Challenge, which requires reasoning over many related facts.",
+    "type": "factual",
+    "difficulty": "easy"
+  },
+  {
+    "id": "Q5",
+    "question": "What context lengths are supported by NeedleBench?",
+    "ground_truth": "NeedleBench supports multiple context lengths, including 4k, 8k, 32k, and 128k tokens, to evaluate LLM performance across varying context sizes.",
+    "type": "factual",
+    "difficulty": "easy"
+  },
+  {
+    "id": "Q6",
+    "question": "What capability is tested by the Single-Needle Retrieval task?",
+    "ground_truth": "The Single-Needle Retrieval task tests the model's ability to accurately retrieve a single relevant piece of information from a long context.",
+    "type": "factual",
+    "difficulty": "medium"
+  },
+  {
+    "id": "Q7",
+    "question": "What capability is tested by the Multi-Needle Retrieval task?",
+    "ground_truth": "The Multi-Needle Retrieval task evaluates the model's ability to find and retrieve multiple relevant pieces of information distributed across a long context.",
+    "type": "factual",
+    "difficulty": "medium"
+  },
+  {
+    "id": "Q8",
+    "question": "What capability is tested by the Multi-Needle Reasoning task?",
+    "ground_truth": "The Multi-Needle Reasoning task tests whether the model can combine multiple retrieved pieces of information to generate a correct answer, assessing its reasoning over complex contexts.",
+    "type": "factual",
+    "difficulty": "medium"
+  },
+  {
+    "id": "Q9",
+    "question": "What type of data is used to construct the needles in NeedleBench?",
+    "ground_truth": "The needles in NeedleBench are constructed using synthetic fictional statements to avoid memorization and ensure fair evaluation of reasoning capabilities.",
+    "type": "factual",
+    "difficulty": "medium"
+  },
+  {
+    "id": "Q10",
+    "question": "What dataset is used as filler content for English tasks?",
+    "ground_truth": "For English tasks, filler content is taken from Paul Graham essays, which provide realistic text to increase context length without introducing additional relevant information.",
+    "type": "factual",
+    "difficulty": "medium"
+  },
+  {
+    "id": "Q11",
+    "question": "What scoring metric is used for information-sparse retrieval tasks?",
+    "ground_truth": "Information-sparse retrieval tasks are scored using accuracy, measuring whether the model correctly retrieves all relevant needles from the context.",
+    "type": "factual",
+    "difficulty": "medium"
+  },
+  {
+    "id": "Q12",
+    "question": "What condition results in a score of 100 in the evaluation metric?",
+    "ground_truth": "A perfect score of 100 is awarded when the model successfully retrieves all needles correctly in a retrieval task.",
+    "type": "factual",
+    "difficulty": "medium"
+  },
+  {
+    "id": "Q13",
+    "question": "What is the name of the metric used to measure reasoning depth?",
+    "ground_truth": "ENL, or Effective Number of Needles, is the metric used to quantify how many pieces of information a model effectively reasons over in multi-needle tasks.",
+    "type": "factual",
+    "difficulty": "medium"
+  },
+  {
+    "id": "Q14",
+    "question": "What threshold value is used for ENL-50?",
+    "ground_truth": "ENL-50 uses a threshold of 50, indicating that at least half of the relevant needles must be effectively considered in reasoning to meet the metric.",
+    "type": "factual",
+    "difficulty": "medium"
+  },
+  {
+    "id": "Q15",
+    "question": "How many repetitions are used to stabilize results in experiments?",
+    "ground_truth": "To ensure stable and reliable results, all experiments are repeated 10 times, and averages are reported.",
+    "type": "factual",
+    "difficulty": "medium"
+  },
+  {
+    "id": "Q16",
+    "question": "Why do information-dense tasks provide a more realistic evaluation of reasoning ability than information-sparse tasks?",
+    "ground_truth": "Information-dense tasks are more realistic because they require the model to integrate multiple related pieces of information, closely mimicking real-world reasoning scenarios.",
+    "type": "reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "Q17",
+    "question": "Why might inserting too much irrelevant filler content make retrieval tasks artificially easy?",
+    "ground_truth": "If too much irrelevant filler content is added, the relevant information becomes sparse and easier for models to identify, which can artificially inflate retrieval performance without true reasoning.",
+    "type": "reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "Q18",
+    "question": "Why can passing retrieval tests still fail to demonstrate true understanding?",
+    "ground_truth": "Passing retrieval tests does not guarantee understanding because the model may locate relevant text without actually reasoning over it or integrating it correctly.",
+    "type": "reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "Q19",
+    "question": "Why do newer models outperform earlier models in long-context retrieval tasks?",
+    "ground_truth": "Newer models generally have improved architectures and attention mechanisms that enable them to handle longer contexts more effectively, leading to better retrieval performance.",
+    "type": "reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "Q20",
+    "question": "Why does increasing model parameter size generally improve multi-needle reasoning performance?",
+    "ground_truth": "Larger models capture more complex relationships and dependencies across multiple pieces of information, which helps in solving multi-needle reasoning tasks.",
+    "type": "reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "Q21",
+    "question": "Why is synthetic data used instead of real-world text in NeedleBench evaluation?",
+    "ground_truth": "Synthetic data is used to prevent models from memorizing real-world facts and to ensure that evaluation focuses on reasoning ability rather than memorization.",
+    "type": "reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "Q22",
+    "question": "How does the number of needles affect reasoning difficulty?",
+    "ground_truth": "As the number of needles increases, the complexity of reasoning rises because the model must retrieve and integrate more pieces of information to produce the correct answer.",
+    "type": "reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "Q23",
+    "question": "Why is tokenization buffering used when generating input contexts?",
+    "ground_truth": "Tokenization buffering is used to prevent truncation of relevant information at the edges of chunks, ensuring all important data is available to the model.",
+    "type": "reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "Q24",
+    "question": "Why is the Ancestral Trace Challenge considered information-dense?",
+    "ground_truth": "The Ancestral Trace Challenge is information-dense because it requires reasoning over a large number of interrelated facts to arrive at the correct answer.",
+    "type": "reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "Q25",
+    "question": "Why is model scale not always sufficient to improve reasoning performance?",
+    "ground_truth": "Increasing model size alone does not guarantee better reasoning, because reasoning also requires structured thinking and the ability to integrate multiple pieces of information correctly.",
+    "type": "reasoning",
+    "difficulty": "hard"
+  }
+]
