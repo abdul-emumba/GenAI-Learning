@@ -1,0 +1,202 @@
+[
+  {
+    "question": "What problem does NeedleBench aim to address in evaluating long-context LLMs?",
+    "ground_truth": "NeedleBench is designed to assess retrieval and reasoning performance in bilingual long-context tasks with adaptive context lengths. It addresses limitations of existing methods that either rely on real-world long texts (making it hard to exclude prior knowledge) or use large amounts of irrelevant filler content to artificially reach target lengths.",
+    "answer_hyde": "The problem that InfiniteBench (not NeedleBench) aims to address in evaluating long-context LLMs is that existing methods for evaluating long-context abilities often rely on real-world long texts, making it difficult to exclude the influence of external knowledge and context.",
+    "correct_hyde": false,
+    "similarity_hyde": 0.6654578447341919,
+    "status_hyde": "FAIL"
+  },
+  {
+    "question": "What are the two main task categories defined in NeedleBench?",
+    "ground_truth": "The two main task categories are: (1) Information-Sparse Tasks, where only a small fraction of the input text contains relevant information; and (2) Information-Dense Tasks (the Ancestral Trace Challenge), where every sentence contains essential content and the model must fully comprehend all details.",
+    "answer_hyde": "Based on the provided context, the two main task categories defined in NeedleBench are:\n\n1. Single-Needle Retrieval Task (S-RT)\n2. Multi-Needle-Reasoning Task (Multi-Needle-Reasoning)",
+    "correct_hyde": false,
+    "similarity_hyde": 0.39943674206733704,
+    "status_hyde": "FAIL"
+  },
+  {
+    "question": "What phenomenon describes premature reasoning termination by models?",
+    "ground_truth": "'Under-thinking' describes the phenomenon where a model prematurely concludes its reasoning process, asserting that no further inference can be made despite the presence of remaining clues in the context. It is the most prevalent error type in the ATC task, accounting for 60.2% of observed failures.",
+    "answer_hyde": "The phenomenon that describes premature reasoning termination by models is called \"under-thinking\".",
+    "correct_hyde": true,
+    "similarity_hyde": 0.7159313559532166,
+    "status_hyde": "PASS"
+  },
+  {
+    "question": "What is the name of the information-dense task proposed in the paper?",
+    "ground_truth": "The information-dense task is the Ancestral Trace Challenge (ATC). It requires models to track interdependent entities and family relationships across an evolving context where every sentence is relevant, with no irrelevant filler content.",
+    "answer_hyde": "Based on the context, the information-dense task proposed in the paper is not explicitly mentioned by name. However, it is described as a task where \"every sentence contains essential content and the model must fully comprehend all details to succeed.\"",
+    "correct_hyde": false,
+    "similarity_hyde": 0.5391278862953186,
+    "status_hyde": "FAIL"
+  },
+  {
+    "question": "What context lengths are supported by NeedleBench?",
+    "ground_truth": "NeedleBench supports flexible context lengths including 4k, 8k, 32k, 128k, 200k, 1000k tokens and beyond, allowing strategic insertion of key data points at various depths.",
+    "answer_hyde": "Based on the provided context, the context lengths supported by NeedleBench are not explicitly mentioned. However, it is mentioned that the performance of models is evaluated across different context lengths. \n\nIn the table, the results for Multi-Needle Reasoning Sub-dataset Results of NeedleBench-128K and NeedleBench-32K are provided, but the context lengths are not specified. \n\nHowever, in the Single-Needle Retrieval task, the context lengths are not explicitly mentioned either.",
+    "correct_hyde": false,
+    "similarity_hyde": 0.6123541593551636,
+    "status_hyde": "FAIL"
+  },
+  {
+    "question": "What capability is tested by the Single-Needle Retrieval task?",
+    "ground_truth": "The Single-Needle Retrieval Task (S-RT) tests LLMs' ability to recall a single key piece of information inserted at various positions (depths) in a long text, highlighting their precision in navigating and recalling a single detail within extensive texts.",
+    "answer_hyde": "The capability tested by the Single-Needle Retrieval task is long-text capability.",
+    "correct_hyde": true,
+    "similarity_hyde": 0.7966106534004211,
+    "status_hyde": "PASS"
+  },
+  {
+    "question": "What capability is tested by the Multi-Needle Retrieval task?",
+    "ground_truth": "The Multi-Needle Retrieval Task (M-RT) explores LLMs' ability to retrieve multiple pieces of related information scattered across a lengthy text, simulating complex real-world queries that require extracting several data points from comprehensive documents.",
+    "answer_hyde": "Based on the provided context, the capability tested by the Multi-Needle Retrieval task is models' ability to handle long-context retrieval and, more specifically, Multi-Needle Reasoning tasks.",
+    "correct_hyde": false,
+    "similarity_hyde": 0.6837506294250488,
+    "status_hyde": "FAIL"
+  },
+  {
+    "question": "What capability is tested by the Multi-Needle Reasoning task?",
+    "ground_truth": "The Multi-Needle Reasoning Task (M-RS) evaluates LLMs' ability for complex reasoning by extracting multiple pieces of information (ranging from 2 to 5 key facts) from long texts and using them to logically answer questions that demand integrated understanding and reasoning across various text segments.",
+    "answer_hyde": "The capability tested by the Multi-Needle Reasoning task is multi-step logical reasoning to extract key information from multiple locations within a long context.",
+    "correct_hyde": true,
+    "similarity_hyde": 0.8086866140365601,
+    "status_hyde": "PASS"
+  },
+  {
+    "question": "What type of data is used to construct the needles in NeedleBench?",
+    "ground_truth": "The needles are synthetic, abstract, and fictional statements or relational facts, deliberately designed to avoid overlap with any real-world knowledge or pretraining data. This prevents models from leveraging memorized information and ensures a fair evaluation of reasoning capability.",
+    "answer_hyde": "Based on the context, it appears that the needles in NeedleBench are constructed using key information from a long document. This is evident from the prompt example in Figure 7, which states \"You need to first read the long document below, and then...\" and then asks the model to perform a task based on the information in the document.",
+    "correct_hyde": false,
+    "similarity_hyde": 0.6512095332145691,
+    "status_hyde": "FAIL"
+  },
+  {
+    "question": "What dataset is used as filler content for English tasks?",
+    "ground_truth": "For English tasks, the haystack (filler content) is built by extending the prompt with passages from the PaulGrahamEssays dataset. For Chinese tasks, the ChineseDomainModelingEval dataset is used.",
+    "answer_hyde": "The PaulGrahamEssays dataset is used as filler content for English tasks.",
+    "correct_hyde": true,
+    "similarity_hyde": 0.7430377006530762,
+    "status_hyde": "PASS"
+  },
+  {
+    "question": "What scoring metric is used for information-sparse retrieval tasks?",
+    "ground_truth": "Information-sparse retrieval tasks use a keyword-aware variant of the Exact Match (EM) metric. Full credit (score of 100) is awarded if any keyword from the predefined core keyword set appears in the model's prediction; zero otherwise.",
+    "answer_hyde": "Based on the provided context, it seems that the scoring metric for information-sparse retrieval tasks is not explicitly mentioned. However, it is mentioned that constructed tests like the Needle In A Haystack (NIAH) test, Ruler, and MRCR mitigate data contamination but are often limited to information-sparse retrieval.\n\nGiven the information, it can be inferred that these tests are designed to evaluate the performance of models in information-sparse retrieval tasks, but the specific scoring metric used is not provided in the given context.",
+    "correct_hyde": true,
+    "similarity_hyde": 0.7098169326782227,
+    "status_hyde": "PASS"
+  },
+  {
+    "question": "What condition results in a score of 100 in the evaluation metric?",
+    "ground_truth": "A score of 100 is awarded when the model's prediction contains at least one keyword from the predefined core keyword set Wc,d,r for that test instance (i.e., Pc,d,r \u2229 Wc,d,r \u2260 \u2205).",
+    "answer_hyde": "According to the context, a score of 100 is awarded in the keyword-aware variant of the Exact Match (EM) metric if any keyword from the predefined set of core keywords `Wc,d,r` appears in the model's prediction `Pc,d,r`. This is represented by the equation:\n\n`Scorec,d,r = 100, if Pc,d,r \u2229 Wc,d,r \u2260 \u2205`\n\nIn simpler terms, if there is any overlap between the model's prediction and the predefined set of core keywords, the score is 100.",
+    "correct_hyde": true,
+    "similarity_hyde": 0.7759264707565308,
+    "status_hyde": "PASS"
+  },
+  {
+    "question": "What is the name of the metric used to measure reasoning depth?",
+    "ground_truth": "ENL (Effective Needle Length), specifically ENL-50, is the metric used to measure reasoning depth. It is defined as the maximum number of needles N for which the model's exact-match accuracy PN remains at or above the threshold \u03c4.",
+    "answer_hyde": "The ENL-50 metric is used to quantify the effective reasoning depth of each model.",
+    "correct_hyde": false,
+    "similarity_hyde": 0.6614741683006287,
+    "status_hyde": "FAIL"
+  },
+  {
+    "question": "What threshold value is used for ENL-50?",
+    "ground_truth": "ENL-50 uses a threshold of \u03c4 = 50%, meaning the model must achieve at least 50% exact-match accuracy at a given needle count to be counted in the ENL-50 score. ENL-50 thus reports the maximum needle count at which the model still achieves \u226550% accuracy.",
+    "answer_hyde": "I cannot verify the threshold value used for ENL-50.",
+    "correct_hyde": true,
+    "similarity_hyde": 0.7763376235961914,
+    "status_hyde": "PASS"
+  },
+  {
+    "question": "How many repetitions are used to stabilize results in experiments?",
+    "ground_truth": "All experiments are repeated R = 10 times for each configuration to enhance result stability, and averages are reported.",
+    "answer_hyde": "According to the context, the subtask is repeated 10 times to ensure stability in the experiments.",
+    "correct_hyde": false,
+    "similarity_hyde": 0.4744812250137329,
+    "status_hyde": "FAIL"
+  },
+  {
+    "question": "Why do information-dense tasks provide a more realistic evaluation of reasoning ability than information-sparse tasks?",
+    "ground_truth": "Information-dense tasks are more realistic because they contain no irrelevant filler content \u2014 every sentence is essential. They require the model to continuously integrate information across the entire context, closely mirroring real-world scenarios like legal case analysis where even small details can affect the final answer.",
+    "answer_hyde": "The text doesn't directly answer why information-dense tasks provide a more realistic evaluation of reasoning ability than information-sparse tasks. However, it does mention that information-sparse tasks are used to evaluate models with long chain-of-thought (long CoT) reasoning abilities, implying that information-dense tasks are used for other types of models.\n\nBut based on the context, it can be inferred that information-dense tasks provide a more realistic evaluation of reasoning ability because they allow for a better assessment of true reasoning capability, rather than just memorization. This is because information-dense tasks are used to evaluate models that explicitly output a \"think\" step or intermediate reasoning process, which suggests that they are better suited for evaluating complex reasoning abilities.",
+    "correct_hyde": false,
+    "similarity_hyde": 0.6058952212333679,
+    "status_hyde": "FAIL"
+  },
+  {
+    "question": "Why might inserting too much irrelevant filler content make retrieval tasks artificially easy?",
+    "ground_truth": "Inserting too much irrelevant filler content makes it easy for models to complete tasks by focusing on only a few key points, without truly reading the full context. This may fail to reflect how models perform on more information-dense tasks that require careful reading and integration of all content.",
+    "answer_hyde": "Inserting too much irrelevant filler content might make retrieval tasks artificially easy because it can distract from the actual information that needs to be extracted, making it easier for models to focus on the relevant content. However, this might not accurately reflect how models perform in real-world scenarios where information is dense and relevant details are scattered throughout the text.",
+    "correct_hyde": true,
+    "similarity_hyde": 0.8676315546035767,
+    "status_hyde": "PASS"
+  },
+  {
+    "question": "Why can passing retrieval tests still fail to demonstrate true understanding?",
+    "ground_truth": "Recent work shows that passing retrieval tests does not guarantee strong reasoning or comprehension in information-dense settings. Many models achieve near-perfect scores on the NIAH test but still fail on tasks requiring multi-step integration of information.",
+    "answer_hyde": "Passing retrieval tests can still fail to demonstrate true understanding because models may be able to retrieve relevant information without truly comprehending the context. This can be due to the model's ability to memorize or recognize patterns in the data, rather than genuinely processing and understanding the information.",
+    "correct_hyde": true,
+    "similarity_hyde": 0.7218016982078552,
+    "status_hyde": "PASS"
+  },
+  {
+    "question": "Why do newer models outperform earlier models in long-context retrieval tasks?",
+    "ground_truth": "Newer models use advanced architectural techniques such as Dual Chunk Attention (DCA) and YaRN that enable effective modeling of both local and global dependencies, substantially enhancing retrieval in long-context settings. Even at a small 1.5B scale, Qwen-2.5 achieves near-perfect scores on retrieval tasks, contrasting sharply with older models like Zephyr-7B-Beta.",
+    "answer_hyde": "Newer models outperform earlier models in long-context retrieval tasks because they leverage advanced techniques for long-context extrapolation, including Dual Chunk Attention (DCA) and YaRN, which enable effective modeling of both local and global dependencies.",
+    "correct_hyde": true,
+    "similarity_hyde": 0.8283188939094543,
+    "status_hyde": "PASS"
+  },
+  {
+    "question": "Why does increasing model parameter size generally improve multi-needle reasoning performance?",
+    "ground_truth": "There is a clear positive correlation between model parameter size and Multi-Needle Reasoning performance, with a marked improvement beyond the 10B\u201320B parameter range. Within model families (Gemma, Qwen), reasoning scores consistently increase with scale, reflecting classic scaling laws. However, this trend is not universal \u2014 the LLaMA-3.1 series shows minimal gains from 8B to 70B parameters, indicating that scaling alone is insufficient.",
+    "answer_hyde": "Based on the context, increasing model parameter size generally improves multi-needle reasoning performance because it allows the model to have increased capacity for integrating multiple information points within long contexts. This is reflected in the positive correlation between model parameter size and Multi-Needle Reasoning (EN) performance, as shown in Figure 4a. The figure demonstrates a marked improvement in performance beyond the 10B\u201320B parameter range, highlighting model scale as a key factor for long-context reasoning.",
+    "correct_hyde": true,
+    "similarity_hyde": 0.8400322198867798,
+    "status_hyde": "PASS"
+  },
+  {
+    "question": "Why is synthetic data used instead of real-world text in NeedleBench evaluation?",
+    "ground_truth": "Synthetic data is used because realistic benchmarks based on real-world text (e.g., Wikipedia) suffer from data contamination: models may achieve high scores by memorizing answers from pretraining rather than genuinely reasoning. Experiments show models score >90% on realistic tasks but drop 50\u201380 percentage points on equivalent synthetic tasks, confirming that realistic benchmarks largely reflect memorization.",
+    "answer_hyde": "According to the context, synthetic data is used instead of real-world text in NeedleBench evaluation to avoid overlap with any real-world knowledge or pretraining data. This is necessary for fair evaluation, as stated in Section D.",
+    "correct_hyde": false,
+    "similarity_hyde": 0.6671960949897766,
+    "status_hyde": "FAIL"
+  },
+  {
+    "question": "How does the number of needles affect reasoning difficulty?",
+    "ground_truth": "As the number of needles increases from 2 to 5, performance declines significantly for all models \u2014 heatmaps shift progressively redder. Integrating more interdependent information points makes the task harder because the model must retrieve and combine all pieces correctly. Even strong models like Gemma-3-27B drop from ~82% on 2-needle tasks to ~19% on 5-needle tasks.",
+    "answer_hyde": "As the number of needles increases, the input context becomes longer and the question increasingly requires the model to perform continuous retrieval and reasoning. This results in a clear downward trend in performance across all models, with most models failing entirely beyond the 64-needle level. Therefore, the number of needles directly affects reasoning difficulty, making it more challenging for the model as the number of needles increases.",
+    "correct_hyde": false,
+    "similarity_hyde": 0.6383106112480164,
+    "status_hyde": "FAIL"
+  },
+  {
+    "question": "Why is tokenization buffering used when generating input contexts?",
+    "ground_truth": "Tokenization buffering is used to mitigate the risk of instruction truncation. A buffer is subtracted from the target context length when generating each input, ensuring that despite differences in how various tokenizers segment the same prompt, all models are consistently exposed to the complete instructions for a fair and reliable evaluation.",
+    "answer_hyde": "Tokenization buffering is used to mitigate the risk of instruction truncation, where essential prompt instructions at the end of the context may be lost due to tokenizer discrepancies across different models.",
+    "correct_hyde": true,
+    "similarity_hyde": 0.9438872337341309,
+    "status_hyde": "PASS"
+  },
+  {
+    "question": "Why is the Ancestral Trace Challenge considered information-dense?",
+    "ground_truth": "The ATC is information-dense because every sentence in the input context contains critical information directly related to the target question \u2014 there is no irrelevant filler text. Each piece of content is essential and contributes to determining the correct answer, requiring the model to comprehend and integrate all details.",
+    "answer_hyde": "The Ancestral Trace Challenge is considered information-dense because it presents complex, multi-step familial relationships in a concise manner. This requires the test-taker to carefully reason through the relationships to identify the eldest ancestor. The challenge is designed to evaluate multi-step reasoning ability, and the dense information presentation makes it a suitable test for this purpose.",
+    "correct_hyde": false,
+    "similarity_hyde": 0.3647955060005188,
+    "status_hyde": "FAIL"
+  },
+  {
+    "question": "Why is model scale not always sufficient to improve reasoning performance?",
+    "ground_truth": "Increasing model size alone is not always sufficient. The LLaMA-3.1 series shows a saturation effect, with Multi-Needle Reasoning scores plateauing around 20 despite scaling from 8B to 70B parameters. Architecture, pretraining data, and instruction tuning also play crucial roles \u2014 for example, Gemma-3-12B significantly outperforms Qwen-2.5-14B despite similar parameter counts.",
+    "answer_hyde": "Based on the context, it appears that model scale is a key factor for long-context reasoning, as demonstrated by the positive correlation between model parameter size and Multi-Needle Reasoning (EN) performance. However, the text also mentions that smaller models or earlier generations, particularly those below 20B parameters, struggle to perform long-context reasoning, even if they have a larger model scale.\n\nThis suggests that model scale is not always sufficient to improve reasoning performance, as other factors such as the model architecture, training data, or optimization techniques may also play a crucial role. Additionally, the text mentions that only a few large-scale models, such as Qwen-2.5-72B and Qwen-2.5-32B, demonstrate significantly higher scores, indicating that even with a large model scale, not all models are able to generalize to long-chain reasoning.",
+    "correct_hyde": false,
+    "similarity_hyde": 0.6936012506484985,
+    "status_hyde": "FAIL"
+  }
+]
