@@ -9,7 +9,7 @@
   {
     "id": "Q2",
     "question": "What are the two main task categories defined in NeedleBench?",
-    "ground_truth": "The two main task categories are: (1) Information-Sparse Tasks, where only a small fraction of the input text contains relevant information; and (2) Information-Dense Tasks (the Ancestral Trace Challenge), where every sentence contains essential content and the model must fully comprehend all details.",
+    "ground_truth": "The two main task categories are: (1) Information-Sparse Tasks (2) Information-Dense Tasks (the Ancestral Trace Challenge).",
     "section": "3 Tasks and Datasets",
     "page": 3
   },
@@ -65,7 +65,7 @@
   {
     "id": "Q10",
     "question": "What dataset is used as filler content for English tasks?",
-    "ground_truth": "For English tasks, the haystack (filler content) is built by extending the prompt with passages from the PaulGrahamEssays dataset. For Chinese tasks, the ChineseDomainModelingEval dataset is used.",
+    "ground_truth": "For English tasks, the haystack (filler content) is built by extending the prompt with passages from the PaulGrahamEssays dataset.",
     "section": "3 Tasks and Datasets",
     "page": 4
   },
@@ -163,14 +163,14 @@
   {
     "id": "Q24",
     "question": "Why is the Ancestral Trace Challenge considered information-dense?",
-    "ground_truth": "The ATC is information-dense because every sentence in the input context contains critical information directly related to the target question — there is no irrelevant filler text. Each piece of content is essential and contributes to determining the correct answer, requiring the model to comprehend and integrate all details.",
+    "ground_truth": "The Ancestral Trace Challenge (ATC) is information-dense because every sentence in the input context contains critical information directly related to the target question — there is no irrelevant filler text. Each piece of content is essential and contributes to determining the correct answer, requiring the model to comprehend and integrate all details.",
     "section": "3.2 NeedleBench Information-Dense Tasks",
     "page": 5
   },
   {
     "id": "Q25",
     "question": "Why is model scale not always sufficient to improve reasoning performance?",
-    "ground_truth": "Increasing model size alone is not always sufficient. The LLaMA-3.1 series shows a saturation effect, with Multi-Needle Reasoning scores plateauing around 20 despite scaling from 8B to 70B parameters. Architecture, pretraining data, and instruction tuning also play crucial roles — for example, Gemma-3-12B significantly outperforms Qwen-2.5-14B despite similar parameter counts.",
+    "ground_truth": "Increasing model size alone is not always sufficient. The LLaMA-3.1 series shows a saturation effect, with Multi-Needle Reasoning scores plateauing around 20 despite scaling from 8B to 70B parameters. Architecture, pretraining data, and instruction tuning also play crucial roles.",
     "section": "4.1.3 Effect of Model Scale on Multi-Needle Reasoning Performance",
     "page": 9
   }

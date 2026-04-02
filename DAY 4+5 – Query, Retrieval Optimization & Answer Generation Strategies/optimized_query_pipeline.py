@@ -14,6 +14,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from sentence_transformers import SentenceTransformer, util
 from langchain_community.retrievers import BM25Retriever
 
+from jsonschema import validate, ValidationError
 from transformers import pipeline
 from sentence_transformers import CrossEncoder
 
@@ -55,6 +56,23 @@ SECTION_RANGES = [
     (21, 22, "G NeedleBench Prompt Examples"),
     (23, 31, "H Error Analysis Examples"),
 ]
+
+json_schema = {
+    "type": "object",
+    "properties": {
+        "answer": {"type": "string", "minLength": 1},
+        "citations": {
+            "type": "array",
+            "items": {"type": "string", "minLength": 1},
+            "minItems": 1
+        },
+        "confidence": {
+            "type": "string",
+            "enum": ["high", "medium", "low"]
+        }
+    },
+    "required": ["answer", "citations", "confidence"]
+}
 
 def get_sections_from_page(page_num: int):
     sections = [section for start, end, section in SECTION_RANGES if start <= page_num <= end]
@@ -122,7 +140,7 @@ class VectorStoreManager:
 
 
 class QAEngine:
-    def __init__(self, vectordb, model_name="llama-3.1-8b-instant"):
+    def __init__(self, vectordb, model_name="meta-llama/llama-4-scout-17b-16e-instruct"):
         self.retriever = vectordb.as_retriever(search_kwargs={"k": 5})
         self.model_name = model_name
 
@@ -158,7 +176,7 @@ class QAEngine:
 
 
 class RAGPipeline:
-    def __init__(self, pdf_paths, model_name="llama-3.1-8b-instant"):
+    def __init__(self, pdf_paths, model_name="meta-llama/llama-4-scout-17b-16e-instruct"):
         self.pdf_paths = pdf_paths
         self.reranker = CrossEncoder('cross-encoder/ms-marco-MiniLM-L-6-v2')
         self.qa_engine = None
@@ -275,7 +293,7 @@ class RAGPipeline:
 
         scored_docs.sort(key=lambda x: x[1], reverse=True)
 
-        return [doc for doc, _ in scored_docs[:top_k]]   # IMPORTANT: cut to top_k
+        return [doc for doc, _ in scored_docs[:10]]   # IMPORTANT: cut to top_k
 
     def multi_query(self, question, k=3, metadata_filter=None):
         """
@@ -330,7 +348,7 @@ class RAGPipeline:
 
         return answer
     
-    def multi_query_hybrid_retrieval(self, question, k=5, metadata_filter=None, rerank=False):
+    def multi_query_hybrid_retrieval(self, question, k=3, metadata_filter=None, rerank=False):
         """
         Multi-query + Hybrid Retrieval + Optional Reranking
 
@@ -431,13 +449,13 @@ def run_model(model_name, prompt, answer_type=None, system_prompt='You are a hel
         Output your response strictly in JSON format with these fields:
                 {
                 "answer": "<your answer with referenced facts>",
-                "citations": ["<source 1>", "<source 2>", ...],
+                "citations": ["<section>:<page>", "<section>:<page>", ...],
                 "confidence": "<high / medium / low>"
                 }
 
                 Rules:
-                1. Do not include information without a source.
-                2. Each citation should clearly support the corresponding part of your answer.
+                1. Always answer based on the context..
+                2. Each citation should clearly support the corresponding part of your answer and .
                 3. Confidence is based on the reliability of sources and the specificity of the answer.
         """
     else:
