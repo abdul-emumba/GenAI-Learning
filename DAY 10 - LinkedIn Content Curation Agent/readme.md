@@ -22,7 +22,7 @@ streamlit run app.py
 | **summarizer** | Condenses search results into 5–7 insight bullets |
 | **Generator** | Writes the LinkedIn post draft (headline, body, hashtags, CTA) |
 | **Editor** | Sharpens hook, tone, and hashtags in a second Groq pass |
-| **ImageGenerator** | Generates a 1200×627 banner via Pollinations.ai in parallel |
+| **ImageGenerator** | Generates a banner via Pollinations.ai in parallel |
 
 ## Why the Planner?
 
